@@ -1,0 +1,95 @@
+# http://github.com/search?q=dotfiles&type=Repositories
+alias l='ls -l'
+alias ..='cd ..'
+alias cdd='cd -'
+alias drop='cd ~/Dropbox'
+alias desk='cd ~/Desktop'
+alias sand='cd ~/sandbox'
+alias h='history'
+alias vim='vim -N'
+alias unvim="find . -name '.*.swn' -exec rm -rf {} \;;find . -name '.*.swm' -exec rm -rf {} \;;find . -name '.*.swo' -exec rm -rf {} \;;find . -name '.*.swl' -exec rm -rf {} \;;find . -name '.*.swp' -exec rm -rf {} \;"
+
+alias topc='top -o cpu'
+alias topm='top -o vsize'
+
+alias t='~/todo.sh -d ~/todo.cfg'
+
+alias s='svn status'
+alias svnu='svn update'
+alias svn?="svn status | grep '\?' |awk '{print $2}'| xargs svn add"
+
+alias unsvn="find . -name '.svn' -exec rm -rf {} \;"
+
+function svnd {
+  svn diff $1
+}
+
+function svna {
+  svn add $1
+}
+
+function take {
+  mkdir $1
+  cd $1
+}
+
+# Git
+alias ungit="find . -name '.git' -exec rm -rf {} \;"
+alias gb='git branch'
+alias gba='git branch -a'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+# Commit pending changes and quote all args as message
+function gg() {
+	git commit -v -a -m "$*"
+}
+alias gco='git checkout'
+alias gd='git diff'
+alias gdm='git diff master'
+alias gl='git pull'
+alias gnp='git-notpushed'
+alias gp='git push'
+alias gst='git status'
+alias gt='git status'
+alias g='git status'
+alias eg='vim .git/config'
+
+function zipr {
+  zip -r ~/Documents/zip_files/$1.zip $1/
+}
+
+alias work='cd ~/sandbox/cms_branches/Trunk; rvm jruby-1.6.2@cms_1_9'
+alias work7='cd ~/sandbox/cms_branches/R1.7.1; rvm jruby-1.6.2@cms_1_7_1'
+alias work9='cd ~/sandbox/cms_branches/R1.9; rvm jruby-1.6.2@cms_1_9'
+alias g2user='cd ~/sandbox/cms_branches/cms_2_0/insider_user_api/Trunk; rvm jruby-1.6.2@user_1_8'
+alias g2user7='cd ~/sandbox/cms_branches/cms_2_0/insider_user_api/R1.7.1; rvm jruby-1.6.2@user_1_7_1'
+alias g2admin='cd ~/sandbox/cms_branches/cms_2_0/insider_admin_api/Trunk; rvm jruby-1.6.2@admin_1_9'
+alias g2admin7='cd ~/sandbox/cms_branches/cms_2_0/insider_admin_api/R1.7.1; rvm jruby-1.6.2@admin_1_7_1'
+alias g2admin9='cd ~/sandbox/cms_branches/cms_2_0/insider_admin_api/R1.9; rvm jruby-1.6.2@admin_1_9'
+alias rvm_1='rvm jruby-1.5.6@insider'
+alias rvm_2='rvm jruby-1.6.2@insider_2'
+alias jrs='jruby -J-Xms512m -J-Xmx1024m -S'
+alias jrs-serv='jruby -S script/server'
+alias jrs-gen='jruby -S script/generate'
+alias jrs-con='jruby -S script/console'
+
+function copy_ssh_key {
+  ssh -p $2 $1 "cat >> ~/.ssh/authorized_keys" < ~/.ssh/id_rsa.pub
+}
+
+# Misc
+
+function stock_price {
+  curl -s 'http://download.finance.yahoo.com/d/quotes.csv?s='$1'&f=l1'
+}
+
+function flight_status { 
+  if [[ $# -eq 3 ]];then offset=$3; else offset=0; fi; 
+  curl "http://mobile.flightview.com/TrackByRoute.aspx?view=detail&al="$1"&fn="$2"&dpdat=$(date +%Y%m%d -d ${offset}day)" 2>/dev/null |html2text |grep ":"; 
+}
+
+function translate { 
+  wget -qO- "http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q=$1&langpair=$2|${3:-en}" | sed 's/.*"translatedText":"\([^"]*\)".*}/\1\n/'; 
+}
+
+alias mem='sudo launchctl load -w /Library/LaunchDaemons/org.macports.memcached.plist'

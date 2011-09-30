@@ -1,0 +1,5 @@
+. ~/bin/dotfiles_osx/bash/env
+. ~/bin/dotfiles_osx/bash/config
+. ~/bin/dotfiles_osx/bash/aliases
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.

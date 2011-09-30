@@ -1,0 +1,14 @@
+export CATALINA_HOME=/Applications/java_bundle/Tomcat/apache-tomcat-6.0.29
+echo "Reading ~/.bashrc"
+
+# Make a simple command-line prompt:  bash-$
+# PS1=$'\[\e]2;[bash]   \h::\]$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]bash-\$ '
+
+export CATALINA_HOME=/Applications/java_bundle/Tomcat/apache-tomcat-5.5.28
+
+export PATH=/usr/local/git/bin:$PATH
+export PATH=~/bin:$PATH
+export PATH=/usr/local/mysql/bin:$PATH
+
+export tMANPATH=/usr/local/git/man:$MANPATH
+
