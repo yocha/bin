@@ -59,7 +59,7 @@ function zipr {
   zip -r ~/Documents/zip_files/$1.zip $1/
 }
 
-alias work='cd ~/sandbox/cms_branches/Trunk'
+alias work='cd ~/sandbox/cms_branches/Trunk; rvm jruby-1.6.2@cms_2_0'
 alias jrs='jruby -J-Xms512m -J-Xmx1024m -S'
 alias jrs-serv='jruby -S script/server'
 alias jrs-gen='jruby -S script/generate'

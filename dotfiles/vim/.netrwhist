@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/Users/yocha/bin/dotfiles_osx'
+let g:netrw_dirhist_2='/home/chuck/.rvm/gems/ruby-1.9.2-p180@rails279/gems/jquery-rails-1.0.19'
+let g:netrw_dirhist_3='/home/chuck/.rvm/gems/ruby-1.8.7-p302@elasticsearch/gems/tire-0.3.12'
