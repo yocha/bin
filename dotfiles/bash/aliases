@@ -40,6 +40,7 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
+alias glog='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
 # Commit pending changes and quote all args as message
 function gg() {
 	git commit -v -a -m "$*"
