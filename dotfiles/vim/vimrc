@@ -74,7 +74,7 @@ map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
 " Uncomment to use Jamis Buck's file opening plugin
-map <Leader>t :FuzzyFinderTextMate<Enter>
+" map <Leader>t :FuzzyFinderTextMate<Enter>
 map <leader>d :NERDTree<Enter>
 map <leader>a :Ack
 
@@ -86,15 +86,15 @@ nnoremap <leader>w <C-w>v<C-w>l
 "nnoremap <C-k> <C-w>k
 "nnoremap <C-l> <C-w>l
 
-nnoremap <Left> <C-w>h<C-w>_
-nnoremap <Down> <C-w>j<C-w>_
-nnoremap <Up> <C-w>k<C-w>_
-nnoremap <Right> <C-w>l<C-w>_
+nnoremap <Left> <C-w>h
+nnoremap <Down> <C-w>j
+nnoremap <Up> <C-w>k
+nnoremap <Right> <C-w>l
 
 set winwidth=80
 "set wmw=20
 set winheight=20
-set wmh=10
+"set wmh=10
 
 " Controversial...swap colon and semicolon for easier commands
 nnoremap ; :
@@ -131,4 +131,7 @@ endfunction
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 " autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
-
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces

@@ -46,6 +46,7 @@ function gg() {
 	git commit -v -a -m "$*"
 }
 alias gco='git checkout'
+alias gcom='git checkout master'
 alias gd='git diff'
 alias gdm='git diff master'
 alias gl='git pull'
@@ -55,6 +56,7 @@ alias gst='git status'
 alias gt='git status'
 alias g='git status'
 alias eg='vim -N .git/config'
+alias gs195='git checkout master;git pull --rebase upstream master;git push origin master'
 
 function zipr {
   zip -r ~/Documents/zip_files/$1.zip $1/

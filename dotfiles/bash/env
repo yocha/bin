@@ -101,5 +101,6 @@ fi
 export PATH=$HOME/bin:$PATH
 export PATH=/var/lib/gems/1.8/bin:$PATH
 export PATH=$PATH:/usr/local/lib/jruby/bin
+export PATH=$PATH:~/bin
 
 export EDITOR=vim
